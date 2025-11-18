@@ -3,6 +3,8 @@ import type { Metadata } from "next"
 import { Space_Grotesk } from "next/font/google"
 import "./globals.css"
 import { LanguageProvider } from "@/contexts/language-context"
+import { ColorblindProvider } from "@/contexts/colorblind-context"
+import { FontSizeProvider } from "@/contexts/font-size-context"
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -245,7 +247,11 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <LanguageProvider>{children}</LanguageProvider>
+        <FontSizeProvider>
+          <ColorblindProvider>
+            <LanguageProvider>{children}</LanguageProvider>
+          </ColorblindProvider>
+        </FontSizeProvider>
       </body>
     </html>
   )

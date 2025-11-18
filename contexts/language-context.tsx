@@ -71,6 +71,30 @@ const translations = {
 
     // Hackathon Section
     "hackathon.backHome": "Back to Home",
+
+    // Colorblind Mode
+    "colorblind.normal": "Normal Mode",
+    "colorblind.deuteranopia": "Deuteranopia Mode",
+    "colorblind.protanopia": "Protanopia Mode",
+    "colorblind.tritanopia": "Tritanopia Mode",
+    "colorblind.toggle": "Toggle Colorblind Mode",
+    "colorblind.active": "Colorblind mode active",
+
+    // Footer Section
+    "footer.portfolio": "Portfolio",
+    "footer.portfolio.design": "Design",
+    "footer.about": "About Me",
+    "footer.about.bio": "Bio",
+    "footer.about.talks": "Talks",
+    "footer.about.articles": "Articles",
+    "footer.connect": "Let's Connect",
+    "footer.connect.project": "Have a project in mind?",
+    "footer.made": "Made with by",
+
+    // Font Size
+    "fontSize.increase": "Increase font size",
+    "fontSize.decrease": "Decrease font size",
+    "fontSize.reset": "Reset font size",
   },
   es: {
     // Navbar
@@ -131,6 +155,30 @@ const translations = {
 
     // Hackathon Section
     "hackathon.backHome": "Volver al Inicio",
+
+    // Colorblind Mode
+    "colorblind.normal": "Modo Normal",
+    "colorblind.deuteranopia": "Modo Deuteranopía",
+    "colorblind.protanopia": "Modo Protanopía",
+    "colorblind.tritanopia": "Modo Tritanopía",
+    "colorblind.toggle": "Alternar Modo Daltónico",
+    "colorblind.active": "Modo daltónico activo",
+
+    // Footer Section
+    "footer.portfolio": "Portafolio",
+    "footer.portfolio.design": "Diseño",
+    "footer.about": "Acerca de Mí",
+    "footer.about.bio": "Bio",
+    "footer.about.talks": "Charlas",
+    "footer.about.articles": "Artículos",
+    "footer.connect": "Conectemos",
+    "footer.connect.project": "¿Tienes un proyecto en mente?",
+    "footer.made": "Hecho con by",
+
+    // Font Size
+    "fontSize.increase": "Aumentar tamaño de fuente",
+    "fontSize.decrease": "Disminuir tamaño de fuente",
+    "fontSize.reset": "Restablecer tamaño de fuente",
   },
   pt: {
     // Navbar
@@ -190,6 +238,30 @@ const translations = {
 
     // Hackathon Section
     "hackathon.backHome": "Voltar ao Início",
+
+    // Colorblind Mode
+    "colorblind.normal": "Modo Normal",
+    "colorblind.deuteranopia": "Modo Deuteranopia",
+    "colorblind.protanopia": "Modo Protanopia",
+    "colorblind.tritanopia": "Modo Tritanopia",
+    "colorblind.toggle": "Alternar Modo Daltônico",
+    "colorblind.active": "Modo daltônico ativo",
+
+    // Footer Section
+    "footer.portfolio": "Portfólio",
+    "footer.portfolio.design": "Design",
+    "footer.about": "Sobre Mim",
+    "footer.about.bio": "Bio",
+    "footer.about.talks": "Palestras",
+    "footer.about.articles": "Artigos",
+    "footer.connect": "Vamos Conversar",
+    "footer.connect.project": "Tem um projeto em mente?",
+    "footer.made": "Feito com by",
+
+    // Font Size
+    "fontSize.increase": "Aumentar tamanho da fonte",
+    "fontSize.decrease": "Diminuir tamanho da fonte",
+    "fontSize.reset": "Restaurar tamanho da fonte",
   },
 }
 

@@ -2,7 +2,9 @@
 
 import { useState, useEffect } from "react"
 import { useLanguage } from "@/contexts/language-context"
-import { Globe, Menu, X, ArrowLeft } from "lucide-react"
+import { useColorblind } from "@/contexts/colorblind-context"
+import { useFontSize } from "@/contexts/font-size-context"
+import { Globe, Menu, X, ArrowLeft, Eye, Type, Plus, Minus } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
@@ -10,6 +12,8 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const { language, setLanguage, t } = useLanguage()
+  const { isColorblindMode, toggleMode } = useColorblind()
+  const { fontSize, increaseFontSize, decreaseFontSize } = useFontSize()
   const pathname = usePathname()
 
   const isStreamingPage = pathname === "/streaming"
@@ -165,7 +169,39 @@ export default function Navbar() {
             </div>
           )}
 
-          <div className="hidden md:flex items-center">
+          <div className="hidden md:flex items-center space-x-2">
+            <div className="flex items-center space-x-1 glass px-2 py-2 rounded-lg mr-1">
+              <button
+                onClick={decreaseFontSize}
+                disabled={fontSize === "small"}
+                className="text-white hover:text-white/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed p-1"
+                aria-label={t("fontSize.decrease")}
+                title={t("fontSize.decrease")}
+              >
+                <Minus size={14} />
+              </button>
+              <Type size={16} className="text-white/75" />
+              <button
+                onClick={increaseFontSize}
+                disabled={fontSize === "extra-large"}
+                className="text-white hover:text-white/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed p-1"
+                aria-label={t("fontSize.increase")}
+                title={t("fontSize.increase")}
+              >
+                <Plus size={14} />
+              </button>
+            </div>
+            <button
+              onClick={toggleMode}
+              className={`flex items-center space-x-2 transition-colors glass px-3 py-2 rounded-lg ${
+                isColorblindMode ? "text-blue-400 hover:text-blue-300" : "text-white hover:text-white/80"
+              }`}
+              aria-label={t("colorblind.toggle")}
+              title={isColorblindMode ? t("colorblind.active") : t("colorblind.normal")}
+            >
+              <Eye size={16} />
+              <span className="text-sm font-medium">{isColorblindMode ? "ON" : "OFF"}</span>
+            </button>
             <button
               onClick={toggleLanguage}
               className="flex items-center space-x-2 text-white hover:text-white/80 transition-colors glass px-3 py-2 rounded-lg"
@@ -176,10 +212,40 @@ export default function Navbar() {
             </button>
           </div>
 
-          <div className="md:hidden flex items-center space-x-3">
+          <div className="md:hidden flex items-center space-x-2">
+            <div className="flex items-center space-x-1 glass px-1.5 py-1 rounded-lg">
+              <button
+                onClick={decreaseFontSize}
+                disabled={fontSize === "small"}
+                className="text-white hover:text-white/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed p-0.5"
+                aria-label={t("fontSize.decrease")}
+              >
+                <Minus size={12} />
+              </button>
+              <Type size={12} className="text-white/75" />
+              <button
+                onClick={increaseFontSize}
+                disabled={fontSize === "extra-large"}
+                className="text-white hover:text-white/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed p-0.5"
+                aria-label={t("fontSize.increase")}
+              >
+                <Plus size={12} />
+              </button>
+            </div>
+            <button
+              onClick={toggleMode}
+              className={`flex items-center space-x-1 transition-colors glass px-2 py-1 rounded-lg ${
+                isColorblindMode ? "text-blue-400" : "text-white hover:text-white/80"
+              }`}
+              aria-label={t("colorblind.toggle")}
+              title={isColorblindMode ? t("colorblind.active") : t("colorblind.normal")}
+            >
+              <Eye size={14} />
+              <span className="text-xs font-medium">{isColorblindMode ? "ON" : "OFF"}</span>
+            </button>
             <button
               onClick={toggleLanguage}
-              className="flex items-center space-x-1 text-white hover:text-white/80 transition-colors glass px-2 py-1 rounded-lg ml-2"
+              className="flex items-center space-x-1 text-white hover:text-white/80 transition-colors glass px-2 py-1 rounded-lg"
               aria-label={getLanguageAriaLabel()}
             >
               <Globe size={14} />
